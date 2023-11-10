@@ -18,7 +18,12 @@ const routes = [
     path: '/admin',
     name: 'admin',
     component: AdminView
-  }
+  },
+  {
+    path: '/scan',
+    name: 'qrcode',
+    component: ScanView
+  },
 ]
 
 const router = createRouter({

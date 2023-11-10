@@ -17,6 +17,7 @@
         <v-list density="compact" nav>
         <v-list-item prepend-icon="mdi-cash-register" title="Register" value="register" to="/"></v-list-item>
         <v-list-item prepend-icon="mdi-chart-line" title="Statistic" value="statistics" to="/statistics"></v-list-item>
+        <v-list-item prepend-icon="mdi-qrcode-scan" title="Scan QR-Code" value="qrcode" to="/scan"></v-list-item>
         <v-list-item prepend-icon="mdi-account-cog" title="Admin" value="admin" to="/admin"></v-list-item>
         </v-list>
     </v-navigation-drawer>
