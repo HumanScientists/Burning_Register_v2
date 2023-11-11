@@ -5,19 +5,28 @@
 <script>
 import { QrcodeStream } from "vue-qrcode-reader";
 import axios from "axios";
-
+import { useQuasar } from 'quasar';
 
 export default {
+    setup () {
+        const $q = useQuasar()
+        return { $q }
+    },
+    components: {
+        QrcodeStream,
+    },
     methods: {
         onDetect (detectedCodes) {
+            console.log(detectedCodes)
             axios
             .post("/api/v1/reservation/reservation/scan/"+detectedCodes[0].codeResult.code, {
                 withCredentials: false, // Ensure credentials are not sent
             })
             .then((response) => {
-                data = response.data;
+                var data = response.data;
+                console.log(data)
                 // check if data has key "message"
-                if (data.hasOwnProperty("message")){
+                if ("message" in data){
                     // scan successful show message
                     this.$q.notify({
                         message: data.message,
@@ -44,3 +53,4 @@ export default {
         }
     }
 }
+</script>

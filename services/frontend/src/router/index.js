@@ -2,6 +2,7 @@ import { createRouter, createWebHistory } from 'vue-router'
 import RegisterView from '../views/RegisterView.vue'
 import StatisticsView from '../views/StatisticsView.vue'
 import AdminView from '../views/AdminView.vue'
+import ScanView from '../views/ScanView.vue'
 
 const routes = [
   {
